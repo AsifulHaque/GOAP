@@ -45,6 +45,7 @@ This code plugin represents a ready-to-use framework for both development and de
 ### Documentation: 
 - GOAP NPC ([Short manual](https://narratech.com/goap-npc/), notes and a version changelist).
 - Full [Documentation](https://drive.google.com/file/d/131lMBvNILMxDJUh6yazG3JZJiKjXac1G/view)
+- Offline [Docs](./GOAP%20NPC%20Manual.pdf)
 - Tutorial Playlist ([Youtube](https://youtube.com/playlist?list=PLMRyVRl3flZ8wKqDkEbnm5Xdpp0M_wOzX&si=VfxLKVCWODSuFfKV))
 - Useful Links:
   - [Original Repo](https://github.com/Narratech/GOAP_NPC)
