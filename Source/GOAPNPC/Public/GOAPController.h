@@ -46,7 +46,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
 		bool debug;
 
-	//Include controller's name
+	//Include controller's name in debug
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
 		bool controller;
 	
@@ -69,6 +69,8 @@ public:
 	AGOAPController();
 
 	virtual void BeginPlay() override;
+
+	virtual void BeginDestroy() override;
 
 	virtual void OnPossess(APawn* pawn) override;
 
