@@ -22,13 +22,13 @@ struct FAtom
 {
 	GENERATED_USTRUCT_BODY()
 
-		// Name of the atom (predicate).
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Atom)
-		FString name;
+	// Name of the atom (predicate).
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Atom)
+	FString name;
 
 	// Value of the atom (truth value).
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Atom)
-		bool value;
+	bool value;
 
 };
 
@@ -44,23 +44,23 @@ class GOAPNPC_API UGOAPAction : public UObject
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Properties)
-		FString name;
+	FString name;
 
 	// Cost of the action. The planner will take this into account when making the cheapest plan.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Properties)
-		float cost;
+	float cost;
 
 	// Object or class type of actor this action's target should have. This can be None if your action doesn't need a target.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Properties)
-		TSubclassOf<AActor> targetsType;
+	TSubclassOf<AActor> targetsType;
 
 	// Preconditions or requirements needed to perform the action.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WorldState)
-		TArray<FAtom> preconditions;
+	TArray<FAtom> preconditions;
 
 	// Effects or postconditions caused by the action.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WorldState)
-		TArray<FAtom> effects;
+	TArray<FAtom> effects;
 
 
 private:
@@ -77,15 +77,15 @@ public:
 
 	// Search all actors of targetsType class located in the world.
 	UFUNCTION(BlueprintCallable, Category = GOAPAction)
-		TArray<AActor*> getTargetsList(APawn* p);
+	TArray<AActor*> getTargetsList(APawn* p);
 
 	// Optional function to check if it's possible to perform the action.
 	UFUNCTION(BlueprintImplementableEvent, Category = GOAPAction)
-		bool checkProceduralPrecondition(APawn* p);
+	bool checkProceduralPrecondition(APawn* p);
 
 	// Performs the action.
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = GOAPAction)
-		bool doAction(APawn* p);
+	bool doAction(APawn* p);
 
 	// Generate action's preconditions and effects.
 	void create_P_E();
@@ -104,7 +104,7 @@ public:
 
 	// Gets the chosen target from targetList or the one specific in setTarget().
 	UFUNCTION(BlueprintCallable, Category = GOAPAction)
-		AActor* getTarget();
+	AActor* getTarget();
 
 	GOAPWorldState getPreconditions();
 
@@ -118,7 +118,7 @@ public:
 
 	// Sets a specific target.
 	UFUNCTION(BlueprintCallable, Category = GOAPAction)
-		void setTarget(AActor* t);
+	void setTarget(AActor* t);
 
 	void setPreconditions(GOAPWorldState preconditionAtoms);
 

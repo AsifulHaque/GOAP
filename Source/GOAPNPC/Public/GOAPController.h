@@ -27,28 +27,28 @@ public:
 
 	// State of the current world.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		TArray<FAtom> currentWorld;
+	TArray<FAtom> currentWorld;
 
 	// State of the world in wich the goal has been achieved.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		TArray<FAtom> desiredWorld;
+	TArray<FAtom> desiredWorld;
 
 	// List of actions AI can do.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		TArray<TSubclassOf<UGOAPAction>> actions;
+	TArray<TSubclassOf<UGOAPAction>> actions;
 
 
 	// Maximum algorithm depth.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		int maxDepth = 100;
+	int maxDepth = 100;
 
 	//Debug info
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		bool debug;
+	bool debug;
 
 	//Include controller's name in debug
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		bool controller;
+	bool controller;
 	
 
 
@@ -78,39 +78,39 @@ public:
 
 	// Creates and execute the plan.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		bool executeGOAP();
+	bool executeGOAP();
 
 	// Creates actions plan
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		bool generatePlan();
+	bool generatePlan();
 
 	// Returns the actions that make up the plan.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		TArray<UGOAPAction*> getPlan();
+	TArray<UGOAPAction*> getPlan();
 
 	// Sets the goal of the AI, this function can also be used to change the goal.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		void setGoal(const TArray<FAtom>& newGoal);
+	void setGoal(const TArray<FAtom>& newGoal);
 
 	// Adds or modifies atoms from the desired world state. Atoms already existing in the desired world state are modified by new input values.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		void updateGoal(const TArray<FAtom>& atoms);
+	void updateGoal(const TArray<FAtom>& atoms);
 
 	// Sets the current world state of the AI, this function can also be used to change the current world state.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		void setCurrentWorld(const TArray<FAtom>& newCurrentWorld);
+	void setCurrentWorld(const TArray<FAtom>& newCurrentWorld);
 
 	// Adds or modifies atoms from the current world state. Atoms already existing in the current world state are modified by new input values.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		void updateCurrentWorld(const TArray<FAtom>& atoms);
+	void updateCurrentWorld(const TArray<FAtom>& atoms);
 
 	// Returns the current world state atoms.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		TArray<FAtom> getCurrentWorldStateAtoms();
+	TArray<FAtom> getCurrentWorldStateAtoms();
 
 	// Returns the desired world state atoms.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-		TArray<FAtom> getDesiredWorldStateAtoms();
+	TArray<FAtom> getDesiredWorldStateAtoms();
 
 private:
 	void debugInfo();
