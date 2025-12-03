@@ -87,6 +87,7 @@ bool AGOAPController::executeGOAP()
 
 			return true;
 		}
+		UE_LOG(LogTemp, Warning, TEXT("Goal is not Achievable!"));
 	}
 
 	return false;

@@ -76,7 +76,7 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
-	// Creates and execute the plan.
+	// Creates and execute the plan. Returns true if there is a viable plan with at least one Action, irrespective of whether DoAction() returns true or not. But changes world state only if DoAction() returns true.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	bool executeGOAP();
 
